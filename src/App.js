@@ -15,7 +15,11 @@ class App extends Component {
     let recipeName = e.target.elements.form_input.value;
     e.preventDefault();
     let recCpy = recipesCopy.filter(el => el.name.toLowerCase().includes(recipeName.toLowerCase()));
-    this.setState({ recipes: recCpy });
+    if(recCpy.length === 0) {
+      alert("There is no recipe with such name");
+    } else {
+      this.setState({ recipes: recCpy });
+    }
   }
   render() {
     return (
@@ -26,6 +30,7 @@ class App extends Component {
               <NavLink to='/'>Recipe Search</NavLink>
             </h1>
           </header>
+          <h2>Enter name of recipe:</h2>
           <Route path='/'  render={ () => <MainSearch recipeSearch={this.recipeSearch} recipes={this.state.recipes} />} />
           <Route path='/recipeInfo/:id?' exact render={ () => <RecipeInfoUrlComponent /> } />
         </div>
