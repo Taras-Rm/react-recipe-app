@@ -26,7 +26,7 @@ class App extends Component {
               <NavLink to='/'>Recipe Search</NavLink>
             </h1>
           </header>
-          <Route path='/' exact render={ () => <MainSearch recipeSearch={this.recipeSearch} recipes={this.state.recipes} />} />
+          <Route path='/'  render={ () => <MainSearch recipeSearch={this.recipeSearch} recipes={this.state.recipes} />} />
           <Route path='/recipeInfo/:id?' exact render={ () => <RecipeInfoUrlComponent /> } />
         </div>
       </BrowserRouter>
