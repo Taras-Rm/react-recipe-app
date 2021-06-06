@@ -17,7 +17,7 @@ const Recipe = (props) => {
           Publisher: <span>{props.recipe.publisher}</span>
         </p>
 
-        <NavLink className="recipe_btn" to={`recipeInfo/${props.recipe.id}`}>
+        <NavLink className="recipe_btn" to={`react-recipe-app/recipeInfo/${props.recipe.id}`}>
           view recipe
         </NavLink>
       </div>

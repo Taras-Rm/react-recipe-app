@@ -29,17 +29,20 @@ class App extends Component {
         <div className="App">
           <header>
             <h1 className="header_title">
-              <NavLink to="/">Recipe Search</NavLink>
+              <NavLink to="/react-recipe-app">Recipe Search</NavLink>
             </h1>
           </header>
           <Route
-            path="/"
+            path="/react-recipe-app"
             exact
             render={() => (
               <MainSearch recipeSearch={this.recipeSearch} recipes={this.state.recipes} />
             )}
           />
-          <Route path="/recipeInfo/:id?" render={() => <RecipeInfoUrlComponent />} />
+          <Route
+            path="/react-recipe-app/recipeInfo/:id?"
+            render={() => <RecipeInfoUrlComponent />}
+          />
         </div>
       </BrowserRouter>
     );
